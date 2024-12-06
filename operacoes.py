@@ -3,24 +3,32 @@ from math import sqrt
 
 # Funções matemáticas que implementa as operações matemáticas
 
-class calculadora:
-
-    def Add(a, b):
+class Calculadora:
+    @staticmethod
+    def add(a, b):
         return a + b
 
+    @staticmethod
     def sub(a, b):
         return a - b
 
+    @staticmethod
     def div(a, b):
+        if b == 0:
+            raise ValueError("Erro: Divisão por zero!")
         return a / b
 
+    @staticmethod
     def mult(a, b):
         return a * b
 
+    @staticmethod
     def pot(a, b):
         return a ** b
 
-    def sqrt(a):
+    @staticmethod
+    def raiz(a):
         if a < 0:
-            raise ValueError('Erro: Raiz quadrada de número negativo.')
+            raise ValueError("Erro: Raiz quadrada de número negativo!")
         return sqrt(a)
+
